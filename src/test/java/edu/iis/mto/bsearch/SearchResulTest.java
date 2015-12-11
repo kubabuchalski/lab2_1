@@ -27,6 +27,16 @@ public class SearchResulTest
 		System.out.println("2 nie znajduje siê w sekwencji");
 		assertEquals(false,  sr.isFound());
 	}
+	
+	@Test
+	public void  isFoundTestSeqFirstElement()
+	{
+		int[] seq = {1,2,3,4};
+		int key = 1;
+		sr = BinarySearch.search(key, seq);
+		System.out.println("Jest pierwszym elementem");
+		assertEquals(1, sr.getPosition());
+	}
 
 
 }
