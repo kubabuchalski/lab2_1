@@ -16,6 +16,7 @@ public class SearchResulTest
 		sr = BinarySearch.search(key, seq);
 		System.out.println("1 znajduje siê w sekwencji");
 		assertEquals(true,  sr.isFound());
+		assertEquals(1, sr.getPosition());
 	}
 	
 	@Test
@@ -26,6 +27,7 @@ public class SearchResulTest
 		sr = BinarySearch.search(key, seq);
 		System.out.println("2 nie znajduje siê w sekwencji");
 		assertEquals(false,  sr.isFound());
+		assertEquals(-1, sr.getPosition());
 	}
 	
 	@Test
@@ -35,6 +37,7 @@ public class SearchResulTest
 		int key = 1;
 		sr = BinarySearch.search(key, seq);
 		System.out.println("Jest pierwszym elementem");
+		assertEquals(true,  sr.isFound());
 		assertEquals(1, sr.getPosition());
 	}
 	
@@ -45,6 +48,7 @@ public class SearchResulTest
 		int key = 4;
 		sr = BinarySearch.search(key, seq);
 		System.out.println("Jest ostatnim elementem");
+		assertEquals(true,  sr.isFound());
 		assertEquals(seq.length, sr.getPosition());
 	}
 	
@@ -55,6 +59,7 @@ public class SearchResulTest
 		int key = 3;
 		sr = BinarySearch.search(key, seq);
 		System.out.println("Jest œrodkowym elementem");
+		assertEquals(true,  sr.isFound());
 		assertEquals(3, sr.getPosition());
 	}
 	
@@ -65,6 +70,7 @@ public class SearchResulTest
 		int key = 7;
 		sr = BinarySearch.search(key, seq);
 		System.out.println("Brak elementu w sekwencji");
+		assertEquals(false,  sr.isFound());
 		assertEquals(-1, sr.getPosition());
 	}
 
