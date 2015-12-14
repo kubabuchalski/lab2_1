@@ -1,7 +1,10 @@
 package edu.iis.mto.bsearch;
 
 import static org.junit.Assert.*;
+import static org.junit.Assume.*;
 
+import org.hamcrest.core.IsEqual;
+import static org.hamcrest.CoreMatchers.*;
 import org.junit.Test;
 
 public class SearchResulTest 
@@ -24,7 +27,9 @@ public class SearchResulTest
 	    } 
 	    catch(IllegalArgumentException e) 
 	    {
-	    	assertEquals(e.getMessage(), "IllegalArgumentException");
+	    	//
+	    	assertThat(e.getMessage(), is("IllegalArgumentException"));
+	    	//assertEquals(e.getMessage(), "IllegalArgumentException");
 	    	System.out.println("Metoda rzucila wyjatkiem: " + e.getMessage());
 	    }
 	}
