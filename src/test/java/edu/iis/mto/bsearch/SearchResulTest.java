@@ -12,7 +12,7 @@ public class SearchResulTest
 	public void shouldThrowIllegalArgumentException() throws Exception  
 	{
 		int[] seq = {};
-		int key = 1;
+		int key = 2;
 		 
 	    // when
 	    try 
