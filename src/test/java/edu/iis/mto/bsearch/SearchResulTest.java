@@ -9,6 +9,25 @@ public class SearchResulTest
 	
 	SearchResult sr = new SearchResult();
 	@Test
+	public void sekwencja_null() 
+	{
+		int[] seq = null;
+		int key = 1;
+//		try 
+		{	
+			
+			Exception e = new IllegalArgumentException();
+			assertEquals(e, BinarySearch.search(key, seq));
+			System.out.println("Wyjatek1 od searcha" + e.toString());
+		} 
+//		catch (Exception e) 
+		{
+//			System.out.println("Wyjatek od searcha " + e.toString());
+			
+		}
+	}
+	
+	@Test
 	public void  isFoundTestSeq1OK()
 	{
 		int[] seq = {1};
@@ -55,12 +74,12 @@ public class SearchResulTest
 	@Test
 	public void  CentralElement()
 	{
-		int[] seq = {1,2,3,4,5};
-		int key = 3;
+		int[] seq = {1,2,3,4};
+		int key = 2;
 		sr = BinarySearch.search(key, seq);
 		System.out.println("Jest œrodkowym elementem");
 		assertEquals(true,  sr.isFound());
-		assertEquals(3, sr.getPosition());
+		assertEquals(2, sr.getPosition());
 	}
 	
 	@Test
