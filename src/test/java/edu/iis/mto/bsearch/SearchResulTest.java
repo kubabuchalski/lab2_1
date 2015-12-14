@@ -9,22 +9,23 @@ public class SearchResulTest
 	
 	SearchResult sr = new SearchResult();
 	@Test
-	public void sekwencja_null() 
+	public void shouldThrowIllegalArgumentException() throws Exception  
 	{
-		int[] seq = null;
+		int[] seq = {};
 		int key = 1;
-//		try 
-		{	
-			
-			Exception e = new IllegalArgumentException();
-			assertEquals(e, BinarySearch.search(key, seq));
-			System.out.println("Wyjatek1 od searcha" + e.toString());
-		} 
-//		catch (Exception e) 
-		{
-//			System.out.println("Wyjatek od searcha " + e.toString());
-			
-		}
+		 
+	    // when
+	    try 
+	    {
+	    	BinarySearch.search(key, seq);
+	        // then
+	    	System.out.println("Ta metoda powinna rzucic wyjatkiem IllegalArgumentException, ale tego nie zrobila.");
+	        fail("Ta metoda powinna rzucic wyjatkiem IllegalArgumentException, ale tego nie zrobila.");
+	    } catch(IllegalArgumentException e) {
+	        //assertThat(e.getMessage(), isEqualTo("IllegalArgumentException");
+	    	assertEquals(e.getMessage(), "IllegalArgumentException");
+	    	System.out.println("Metoda rzucila wyjatkiem: " + e.getMessage());
+	    }
 	}
 	
 	@Test
