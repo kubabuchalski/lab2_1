@@ -27,11 +27,11 @@ public class BinarySearch {
 		SearchResult result = new SearchResult();
 
 		//dodane rzucanie wyjatkiem przy zerowej dlugosci sekwencji
-		/*if (seq.length == 0)
+		if (seq.length == 0)
 		{
 			throw new IllegalArgumentException("IllegalArgumentException");
 		}
-		*/
+		
 		while (start <= end) {
 			center = (start + end) / 2;
 			if (seq[center] == key) {

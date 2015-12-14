@@ -21,8 +21,9 @@ public class SearchResulTest
 	        // then
 	    	System.out.println("Ta metoda powinna rzucic wyjatkiem IllegalArgumentException, ale tego nie zrobila.");
 	        fail("Ta metoda powinna rzucic wyjatkiem IllegalArgumentException, ale tego nie zrobila.");
-	    } catch(IllegalArgumentException e) {
-	        //assertThat(e.getMessage(), isEqualTo("IllegalArgumentException");
+	    } 
+	    catch(IllegalArgumentException e) 
+	    {
 	    	assertEquals(e.getMessage(), "IllegalArgumentException");
 	    	System.out.println("Metoda rzucila wyjatkiem: " + e.getMessage());
 	    }
